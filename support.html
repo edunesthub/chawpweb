@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support | Chawp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="legal-page">
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span class="gradient-text">CHAWP</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="privacy-policy.html">Privacy</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding-top: 150px; max-width: 800px;">
+        <div class="contact-card" style="text-align: left;">
+            <h1 class="gradient-text" style="font-size: 3rem; margin-bottom: 24px;">Support Center</h1>
+            <p style="margin-bottom: 40px; font-size: 1.1rem; color: var(--text-dim);">Need help with an order or have
+                questions about the app? Our team is here to help you live the soft life.</p>
+
+            <div class="features-grid" style="grid-template-columns: 1fr; gap: 24px; margin-bottom: 40px;">
+                <div class="feature-card" style="padding: 30px; display: flex; align-items: center; gap: 24px;">
+                    <div class="feature-icon" style="margin-bottom: 0;"><i class="fab fa-whatsapp"></i></div>
+                    <div>
+                        <h4 style="margin-bottom: 4px;">WhatsApp Support</h4>
+                        <p style="font-size: 0.9rem;">Instant chat with our agents.</p>
+                        <a href="https://wa.me/233509330098" class="gradient-text"
+                            style="text-decoration: none; font-weight: 600;">Chat Now &rarr;</a>
+                    </div>
+                </div>
+                <div class="feature-card" style="padding: 30px; display: flex; align-items: center; gap: 24px;">
+                    <div class="feature-icon" style="margin-bottom: 0;"><i class="fas fa-envelope"></i></div>
+                    <div>
+                        <h4 style="margin-bottom: 4px;">Email Us</h4>
+                        <p style="font-size: 0.9rem;">For business and complex issues.</p>
+                        <a href="mailto:contact@chawp.com" class="gradient-text"
+                            style="text-decoration: none; font-weight: 600;">Email Now &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="gradient-text" style="margin: 60px 0 32px;">Frequently Asked Questions</h2>
+            <div class="faq-list" style="margin: 0;">
+                <div class="faq-item">
+                    <div class="faq-question">How fast is delivery? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">Most campus orders are delivered within 15-25 minutes depending on the
+                        vendor's preparation time.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What payment methods are accepted? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">We accept Mobile Money (MTN, Telecel, AT) and cash on delivery for selected
+                        items.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I cancel my order? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">Orders can be cancelled within 2 minutes of placing them. After the vendor
+                        starts preparation, cancellation is not possible.</div>
+                </div>
+            </div>
+
+            <div
+                style="margin-top: 60px; padding: 30px; border-radius: 20px; background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border);">
+                <h4 style="margin-bottom: 12px;">Support Hours</h4>
+                <p style="font-size: 0.9rem; color: var(--text-dim);">Monday - Sunday: 8:00 AM - 10:00 PM (GMT)</p>
+            </div>
+        </div>
+    </main>
+
+    <footer style="margin-top: 100px;">
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Chawp. <a href="index.html" style="color: var(--primary);">Home</a> | <a
+                    href="privacy-policy.html" style="color: var(--primary);">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const answer = q.nextElementSibling;
+                const icon = q.querySelector('i');
+                const isOpen = answer.style.display === 'block';
+                document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+                document.querySelectorAll('.faq-question i').forEach(i => i.style.transform = 'rotate(0deg)');
+                if (!isOpen) {
+                    answer.style.display = 'block';
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
