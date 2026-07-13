@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Account & Data | Chawp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="legal-page">
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span class="gradient-text">CHAWP</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="support.html">Support</a>
+                <a href="privacy-policy.html">Privacy</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding-top: 150px; max-width: 800px;">
+        <div class="contact-card" style="text-align: left;">
+            <h1 class="gradient-text" style="font-size: 3rem; margin-bottom: 24px;">Account Deletion</h1>
+            <p style="margin-bottom: 40px; font-size: 1.1rem; color: var(--text-dim);">
+                If you would like to delete your Chawp account and associated data, you can request it here.
+            </p>
+
+            <div style="margin-bottom: 40px; color: var(--text-dim); line-height: 1.8;">
+                <h3 style="color: #fff; margin-bottom: 12px;">How to request data deletion</h3>
+                <p style="margin-bottom: 16px;">
+                    When you delete your account, we delete all your personal identifiers (such as your name, phone number, email address, push tokens, and saved delivery details). Your order history is anonymized for accounting purposes.
+                </p>
+                <p style="margin-bottom: 16px;">
+                    You can request deletion in two ways:
+                </p>
+                <ol style="margin-left: 20px; margin-bottom: 24px;">
+                    <li style="margin-bottom: 8px;"><strong>Inside the App:</strong> Go to your profile screen and select "Delete Account". This processes your request instantly.</li>
+                    <li style="margin-bottom: 8px;"><strong>Web Request Form:</strong> Fill out the form below to submit a deletion request. Our support team will process your request within 24 hours.</li>
+                </ol>
+            </div>
+
+            <form id="deletionForm" style="margin-top: 32px;">
+                <div class="form-group">
+                    <input type="text" id="deleteName" class="form-input" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="deleteEmail" class="form-input" placeholder="Registered Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="deletePhone" class="form-input" placeholder="Registered Phone Number (Optional)">
+                </div>
+                <div class="form-group" style="display: flex; gap: 12px; align-items: flex-start; margin-top: 16px;">
+                    <input type="checkbox" id="confirmCheckbox" required style="margin-top: 6px; cursor: pointer;">
+                    <label for="confirmCheckbox" style="font-size: 0.9rem; color: var(--text-dim); cursor: pointer; user-select: none;">
+                        I confirm that I want to delete my account and permanently erase all associated personal data from Chawp's servers.
+                    </label>
+                </div>
+                <button type="submit" class="submit-btn" style="width: 100%; margin-top: 24px;">Submit Deletion Request</button>
+            </form>
+        </div>
+    </main>
+
+    <footer style="margin-top: 100px;">
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Chawp. <a href="index.html" style="color: var(--primary);">Home</a> | <a
+                    href="privacy-policy.html" style="color: var(--primary);">Privacy Policy</a> | <a
+                    href="delete-account.html" style="color: var(--primary);">Account Deletion</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('deletionForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('deleteName').value;
+            const email = document.getElementById('deleteEmail').value;
+            const phone = document.getElementById('deletePhone').value || 'Not provided';
+            
+            const message = `Hi Chawp Support, I would like to request account and data deletion.\nName: ${name}\nEmail: ${email}\nPhone: ${phone}`;
+            window.open(`https://wa.me/233509330098?text=${encodeURIComponent(message)}`);
+        });
+    </script>
+</body>
+
+</html>
